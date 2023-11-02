@@ -21,9 +21,8 @@ class ReportGenerator:
     def send_pump_message(self, symbol, interval, change, price):
         self.telegram.send_message(
             """\
-{0} *{1} [{2} Interval]* | Change: _{3:.3f}%_ | Price: _{4:.10f}_
-
-Open in [Binance Spot](https://www.binance.com/en/trade/{1})\
+{0} *{1} [{2} Interval]* | Change: _{3:.3f}%_ | Price: _{4:.10f}_ 
+ \
             """.format(
                 self.pump_emoji, symbol, interval, change * 100, price
             ),
@@ -35,7 +34,7 @@ Open in [Binance Spot](https://www.binance.com/en/trade/{1})\
             """\
 {0} *{1} [{2} Interval]* | Change: _{3:.3f}%_ | Price: _{4:.10f}_
 
-Open in [Binance Spot](https://www.binance.com/en/trade/{1})\
+\
             """.format(
                 self.dump_emoji, symbol, interval, change * 100, price
             ),
@@ -125,7 +124,7 @@ Open in [Binance Spot](https://www.binance.com/en/trade/{1})\
 Price: _{3:.10f}_ | Volume: _{4}_
 
 {5}
-Open in [Binance Spot](https://www.binance.com/en/trade/{0})\
+\
             """.format(
             asset["symbol"],
             no_of_alerts,

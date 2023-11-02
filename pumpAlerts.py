@@ -35,7 +35,7 @@ colorlog.basicConfig(
 )
 
 # Define your logger name
-logger = logging.getLogger("binance-pump-alerts-app")
+logger = logging.getLogger("nội soi Crypto")
 
 # Logg whole configuration during the startup
 logger.info("Using config file: %s", config_file)

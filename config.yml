@@ -35,11 +35,11 @@ outlierIntervals:
 # Used for telegram bot updates
 
 # Insert telegramToken obtained from @BotFather here
-telegramToken: mySecretToken
+telegramToken: '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
 # Insert Chat ID obtained from @get_id_bot here
-telegramChatId: mySecretChatId
+telegramChatId: 6266505287
 # Insert Chat ID for top pump dump alert, if left on `0` it'll send the message to telegram chat id
-telegramAlertChatId: 0
+telegramAlertChatId: -1001720823065
 
 # Useful Params
 
@@ -55,6 +55,7 @@ extractInterval: 1s
 # Blacklist only mode, if enabled, pairs in blacklist will be IGNORED it DOES NOT IMPACT pairsOfInterest
 blacklist:
   - NBTUSDT
+  - BTTCUSDT
 #  - ETHUSDT
 
 # List the trading currency you are interested in. Other options include 'BUSD', 'BTC' , 'ETH'
@@ -78,6 +79,7 @@ additionalStatsEnabled: True
 noOfReportedCoins: 5
 # Intervals for top pump and dump to be sent, ensure its in chartIntervals + outlierIntervals as well
 topReportIntervals:
+  - 1h
   - 3h
   - 6h
 

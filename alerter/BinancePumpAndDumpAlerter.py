@@ -46,7 +46,7 @@ class BinancePumpAndDumpAlerter:
         self.telegram = telegram
         self.report_generator = report_generator
 
-        self.logger = logging.getLogger("pump-and-dump-alerter")
+        self.logger = logging.getLogger("báo động tăng giảm ")
 
         self.initial_time = int(time.time())
         nearest_hour = self.initial_time - (self.initial_time % 3600) + 3600
@@ -344,7 +344,8 @@ class BinancePumpAndDumpAlerter:
             self.chart_intervals,
         )
 
-        message = "*Bot has started.* Following _{0}_ pairs."
+        # message = "Let's start. Following _{0}_ pairs."
+        message = ""
         self.telegram.send_generic_message(message, len(filtered_assets))
         if self.telegram.is_alert_chat_enabled():
             self.telegram.send_generic_message(
