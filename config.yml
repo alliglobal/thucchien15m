@@ -56,6 +56,10 @@ extractInterval: 1s
 blacklist:
   - NBTUSDT
   - BTTCUSDT
+  - PERLUSDT
+  - WTCUSDT
+  - BTSUSDT
+  - TORNUSDT
 #  - ETHUSDT
 
 # List the trading currency you are interested in. Other options include 'BUSD', 'BTC' , 'ETH'
@@ -79,6 +83,7 @@ additionalStatsEnabled: True
 noOfReportedCoins: 5
 # Intervals for top pump and dump to be sent, ensure its in chartIntervals + outlierIntervals as well
 topReportIntervals:
+  - 15m
   - 1h
   - 3h
   - 6h
