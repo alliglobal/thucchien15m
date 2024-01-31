@@ -149,7 +149,7 @@ Price: _{3:.10f}_ | Volume: _{4}_
         if not top_pump_enabled or not top_dump_enabled:
             return
 
-        message = "*[{0} Interval]*\n\n".format(interval)
+        message = "*[ Biến động {0} ]*\n\n".format(interval)
 
         if top_pump_enabled:
             pump_sorted_list = sorted(

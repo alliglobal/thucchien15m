@@ -6,10 +6,6 @@ apiUrl: https://api.binance.com/api/v3/ticker/price
 
 # Intervals which are monitored. Add or remove intervals as you like.
 chartIntervals:
-  - 1s
-  - 5s
-  - 15s
-  - 30s
   - 1m
   - 5m
   - 15m
@@ -35,11 +31,16 @@ outlierIntervals:
 # Used for telegram bot updates
 
 # Insert telegramToken obtained from @BotFather here
-telegramToken: '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
+#telegramToken: '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
+telegramToken: '5894885604:AAH5XD-0rQoi5zw23CaugRBJ45-EpbkCY88'
 # Insert Chat ID obtained from @get_id_bot here
-telegramChatId: 6266505287
+#telegramChatId: 6266505287 - Jeff Bezos Warrent
+telegramChatId: 5833143227
 # Insert Chat ID for top pump dump alert, if left on `0` it'll send the message to telegram chat id
-telegramAlertChatId: -1001720823065
+#telegramAlertChatId: -1001720823065  AI 306 
+#telegramAlertChatId: -1002068543523
+
+telegramAlertChatId: -1001697199458
 
 # Useful Params
 
@@ -85,15 +86,16 @@ noOfReportedCoins: 5
 topReportIntervals:
   - 15m
   - 1h
-  - 3h
-  - 6h
+
 
 # Define your own bot emojis.
 botEmoji: ! "\U0001F916" # 🤖
 pumpEmoji: ! "\U0001F7E2" # 🟢 or '\U0001F4C8' 📈 '\U0001F53C'🔼
 dumpEmoji: ! "\U0001F534" # 🔴 or '\U0001F4C9' 📉 '\U0001F53D'🔽
-topEmoji: ! "\U0001F3C6" # 🏆
+#topEmoji: ! "\U0001F3C6" # 🏆
+topEmoji: ! "\U0001f3af" # 🎯
 newsEmoji: ! "\U0001F4F0" # 📰 or '\U0001F680' 🚀
+copyrightEmoji: ! "\u00A9\uFE0F" # ©️ 
 
 # Debug Params (Avoid touching it if there's no issues)
 
