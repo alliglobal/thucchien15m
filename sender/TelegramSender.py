@@ -111,29 +111,7 @@ class TelegramSender:
         apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
 
         try:
-            response = requests.post(apiURL, json={'chat_id': chatID, 
-                                                   'text': message,
-                                                   'parse_mode' : 'markdown',
-                                                    'reply_markup' : {
-                                                        "inline_keyboard" : [
-                                                            [
-                                                                {
-                                                                    "text" : "Binance",
-                                                                    "url" : "https://accounts.binance.com/register?ref=25137111"
-                                                                },
-                                                                 {
-                                                                    "text" : "Bitget",
-                                                                    "url" : "https://accounts.binance.com/register?ref=25137111"
-                                                                },
-                                                                 {
-                                                                    "text" : "Mecx",
-                                                                    "url" : "https://accounts.binance.com/register?ref=25137111"
-                                                                }
-                                                            ]
-                                                        ]
-                                                    },
-                                                                                    
-                                                   })
+            response = requests.post(apiURL, json={'chat_id': chatID, 'text': message})
             # print(response.text)
         except Exception as e:
             print(e)
@@ -157,23 +135,6 @@ class TelegramSender:
                     parse_mode=ParseMode.MARKDOWN,
                     disable_web_page_preview=True,
                 )
-
-                # requests.post(apiURL, json={
-#     'chat_id': chat_id, 
-#     'text': text_post,
-#     'parse_mode' : 'markdown',
-#     "reply_markup" : {
-#         "inline_keyboard" : [
-#             [
-#                 {
-#                     "text" : "Trade Now",
-#                     "url" : "https://accounts.binance.com/register?ref=25137111"
-#                 }
-#             ]
-#         ]
-#    }
-    
-# }
             except RetryAfter as e:
                 self.logger.error(
                     "Flood limit is exceeded. Sleep {} seconds.", e.retry_after
