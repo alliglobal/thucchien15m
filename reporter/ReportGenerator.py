@@ -53,7 +53,7 @@ class ReportGenerator:
 
         message += "\n"
         for symbol in symbols_to_add:
-            message += "- _{0}_\n".format(symbol)
+            message += " _{0}_\n".format(symbol)
 
         self.telegram.send_news_message(message, is_alert_chat=True)
 
@@ -94,7 +94,7 @@ class ReportGenerator:
             no_of_alerts += 1
 
             if change > 0:
-                message += "{0} *{1} Interval* | Change: _{2:.3f}%_\n".format(
+                message += "{0} *{1} Interval* | Change: {2:.3f}%_\n".format(
                     self.pump_emoji,
                     interval,
                     change * 100,
@@ -102,7 +102,7 @@ class ReportGenerator:
                 )
 
             if change < 0 and dump_enabled:
-                message += "{0} *{1} Interval* | Change: _{2:.3f}%_\n".format(
+                message += "{0} *{1} Interval* | Change: {2:.3f}%_\n".format(
                     self.dump_emoji,
                     interval,
                     change * 100,
@@ -163,7 +163,7 @@ Price: _{3:.10f}_ | Volume: _{4}_
             )
 
             for asset in pump_sorted_list:
-                message += "- {0}: _{1:.2f}_%\n".format(
+                message += " {0}: {1:.2f}_%\n".format(
                     asset["symbol"], asset[interval]["change_current"] * 100
                 )
             message += "\n"
@@ -178,7 +178,7 @@ Price: _{3:.10f}_ | Volume: _{4}_
             )
 
             for asset in dump_sorted_list:
-                message += "- {0}: _{1:.2f}_%\n".format(
+                message += " {0}: {1:.2f}_%\n".format(
                     asset["symbol"], asset[interval]["change_current"] * 100
                 )
 
@@ -186,6 +186,10 @@ Price: _{3:.10f}_ | Volume: _{4}_
             if top_pump_enabled or top_dump_enabled:
                 message += "\n"
             message += self.generate_additional_statistics_report(assets, interval)
+
+            message += '\n'
+
+            message += ' ©️Coin Thuc Chien'
 
         self.telegram.send_report_message(message, is_alert_chat=True)
 
@@ -204,10 +208,31 @@ Price: _{3:.10f}_ | Volume: _{4}_
 
         avg_change = sum_change / len(assets)
 
-        return "*Average Change:* {0:.2f}%\n {1} {2} / {3} {4}".format(
+        return "*Trade Now:* {0:.2f}%\n {1} {2} / {3} {4}".format(
             avg_change * 100,
             self.pump_emoji,
             up,
             self.dump_emoji,
             down,
         )
+
+# f'https://api.telegram.org/bot{api_token}/sendMessage'
+
+# requests.post(apiURL, json={
+#     'chat_id': chat_id, 
+#     'text': text_post,
+#     'parse_mode' : 'markdown',
+#     "reply_markup" : {
+#         "inline_keyboard" : [
+#             [
+#                 {
+#                     "text" : "Trade Now",
+#                     "url" : "https://accounts.binance.com/register?ref=25137111"
+#                 }
+#             ]
+#         ]
+#    }
+    
+# }
+    
+)
