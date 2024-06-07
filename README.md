@@ -79,8 +79,8 @@ BPA is a simple application which gets the price data from Binance Spot or Futur
 1. [Test] Volume Change Updates (TEST_VOL version)
 1. Allows long period of running without memory issues
 1. Send periodic Top X Pump & Dump reports
-1. Docker integration (Thanks to [@patbaumgartner](https://github.com/patbaumgartner))
-1. Logging integration (Thanks to [@patbaumgartner](https://github.com/patbaumgartner))
-1. Major Refactoring and cleanup (Thanks to [@patbaumgartner](https://github.com/patbaumgartner))
+1. Docker integration 
+1. Logging integration 
+1. Major Refactoring and cleanup 
 1. Blacklist feature
 # thucchien15m
