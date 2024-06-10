@@ -61,6 +61,9 @@ blacklist:
   - BTSUSDT
   - TORNUSDT
 #  - ETHUSDT
+  - DREPUSDT
+  - MODUSDT
+  - PNTUSDT
 
 # List the trading currency you are interested in. Other options include 'BUSD', 'BTC' , 'ETH'
 pairsOfInterest:
@@ -83,6 +86,7 @@ additionalStatsEnabled: True
 noOfReportedCoins: 5
 # Intervals for top pump and dump to be sent, ensure its in chartIntervals + outlierIntervals as well
 topReportIntervals:
+  - 5m
   - 15m
   - 1h
   - 3h
