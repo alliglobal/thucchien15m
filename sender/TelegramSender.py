@@ -16,16 +16,8 @@ import requests
 
 class TelegramSender:
 
-    # apiToken = '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
-    # chatID = '-1001720823065'
-
-    # apiToken = '5894885604:AAH5XD-0rQoi5zw23CaugRBJ45-EpbkCY88'
-    # chatID = '-1002068543523'
-
-    #THẾ GIỚI BIT CHANNEL
-    apiToken = '5894885604:AAH5XD-0rQoi5zw23CaugRBJ45-EpbkCY88'
-    chatID = '-1001697199458'
-    
+    apiToken = '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
+    chatID = '-1001720823065'
     apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
 
     def __init__(
@@ -44,12 +36,9 @@ class TelegramSender:
       
 
         # self.token = token
-        #self.token = '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
-        self.token = '5894885604:AAH5XD-0rQoi5zw23CaugRBJ45-EpbkCY88'
+        self.token = '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
         # self.chat_id = chat_id
-        #self.chat_id = '-1001720823065'
-        #self.chat_id = '-1002068543523'
-        self.chat_id = '1001697199458'
+        self.chat_id = '-1001720823065'
         self.alert_chat_id = alert_chat_id
 
         self.bot_emoji = bot_emoji
@@ -71,14 +60,8 @@ class TelegramSender:
 
     def send_to_telegram(message):
 
-        # apiToken = '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
-        # chatID = '-1001720823065'
-        # apiToken = '5894885604:AAH5XD-0rQoi5zw23CaugRBJ45-EpbkCY88'
-        # chatID = '-1002068543523'
-
-        apiToken = '5894885604:AAH5XD-0rQoi5zw23CaugRBJ45-EpbkCY88'
-        chatID = '-1001697199458'
-
+        apiToken = '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
+        chatID = '-1001720823065'
         apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
 
         try:
@@ -93,21 +76,13 @@ class TelegramSender:
 
     def send_message(self, message, is_alert_chat=False):
         # chat_id = self.chat_id if not is_alert_chat else self.alert_chat_id
-        #chat_id = '-1002068543523'
-        chat_id = '1001697199458'
+        chat_id = '-1001720823065'
 
         messsage = 'Halo'
 
 
-        # apiToken = '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
-        # chatID = '-1001720823065'
-        # apiToken = '5894885604:AAH5XD-0rQoi5zw23CaugRBJ45-EpbkCY88'
-        # chatID = '-1002068543523'
-
-        apiToken = '5894885604:AAH5XD-0rQoi5zw23CaugRBJ45-EpbkCY88'
-        chatID = '-1001697199458'
-
-
+        apiToken = '6552511028:AAFOWc_1Z5NqvdmDtPjCZJ9hp_r-R2aOXSw'
+        chatID = '-1001720823065'
         apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
 
         try:
@@ -129,8 +104,7 @@ class TelegramSender:
             try:
                 bot.send_message(
                     # chat_id=chat_id,
-                    #chat_id = '-1002068543523',
-                    chat_id = '-1001697199458',
+                    chat_id = '-1001720823065',
                     text=message,
                     parse_mode=ParseMode.MARKDOWN,
                     disable_web_page_preview=True,
