@@ -21,7 +21,7 @@ class ReportGenerator:
     def send_pump_message(self, symbol, interval, change, price):
         self.telegram.send_message(
             """\
-{0} *{1} [{2} Interval]* | Change: _{3:.3f}%_ | Price: _{4:.10f}_ 
+{0} *{1} [{2} Khung thời gian]* | Tăng: _{3:.3f}%_ | Price: _{4:.10f}_ 
  \
             """.format(
                 self.pump_emoji, symbol, interval, change * 100, price
@@ -32,7 +32,7 @@ class ReportGenerator:
     def send_dump_message(self, symbol, interval, change, price):
         self.telegram.send_message(
             """\
-{0} *{1} [{2} Interval]* | Change: _{3:.3f}%_ | Price: _{4:.10f}_
+{0} *{1} [{2} Khung thời gian]* | Giảm: _{3:.3f}%_ | Price: _{4:.10f}_
 
 \
             """.format(
@@ -94,7 +94,7 @@ class ReportGenerator:
             no_of_alerts += 1
 
             if change > 0:
-                message += "{0} *{1} Interval* | Change: {2:.3f}%_\n".format(
+                message += "{0}  Khung thời gian {1} | Thay đổi: {2:.3f}%\n".format(
                     self.pump_emoji,
                     interval,
                     change * 100,
@@ -102,7 +102,7 @@ class ReportGenerator:
                 )
 
             if change < 0 and dump_enabled:
-                message += "{0} *{1} Interval* | Change: {2:.3f}%_\n".format(
+                message += "{0}  Khung thời gian {1} | Thay đổi: {2:.3f}%\n".format(
                     self.dump_emoji,
                     interval,
                     change * 100,
@@ -149,7 +149,7 @@ Price: _{3:.10f}_ | Volume: _{4}_
         if not top_pump_enabled or not top_dump_enabled:
             return
 
-        message = "*[{0} Interval]*\n\n".format(interval)
+        message = "*[{0} Khung thời gian]*\n\n".format(interval)
 
         if top_pump_enabled:
             pump_sorted_list = sorted(
@@ -158,12 +158,12 @@ Price: _{3:.10f}_ | Volume: _{4}_
                 reverse=True,
             )[0:no_of_reported_coins]
 
-            message += "{0} *Top {1} Pumps*\n".format(
+            message += "{0} *Top {1} Tăng*\n".format(
                 self.pump_emoji, no_of_reported_coins
             )
 
             for asset in pump_sorted_list:
-                message += " {0}: {1:.2f}_%\n".format(
+                message += " {0}: {1:.2f} %\n".format(
                     asset["symbol"], asset[interval]["change_current"] * 100
                 )
             message += "\n"
@@ -173,12 +173,12 @@ Price: _{3:.10f}_ | Volume: _{4}_
                 assets, key=lambda item: item[interval]["change_current"]
             )[0:no_of_reported_coins]
 
-            message += "{0} *Top {1} Dumps*\n".format(
+            message += "{0} *Top {1} Giảm*\n".format(
                 self.dump_emoji, no_of_reported_coins
             )
 
             for asset in dump_sorted_list:
-                message += " {0}: {1:.2f}_%\n".format(
+                message += " {0}: {1:.2f} %\n".format(
                     asset["symbol"], asset[interval]["change_current"] * 100
                 )
 

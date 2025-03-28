@@ -155,6 +155,8 @@ class BinancePumpAndDumpAlerter:
 
         for exchange_asset in exchange_assets:
             symbol = exchange_asset["symbol"]
+            print("BIGGGG NEWSSSS")
+            print(symbol)
 
             if self.is_symbol_valid(symbol, watchlist, blacklist, pairs_of_interest):
                 filtered_assets.append(self.create_new_asset(symbol, chart_intervals))
@@ -212,8 +214,24 @@ class BinancePumpAndDumpAlerter:
                 )
                 break
             # Gets change in % from last alert trigger.
-            price_delta = asset["price"][-1] - asset["price"][-1 - data_points]
-            change = price_delta / asset["price"][-1]
+
+            # Xu ly ZeroDivisionError: float division by zero
+
+            # price_delta = asset["price"][-1] - asset["price"][-1 - data_points]
+            # change = price_delta / asset["price"][-1]
+
+            current_price = asset["price"][-1]
+            if current_price == 0:
+                self.logger.warning(
+                    "Received zero price for asset %s, skipping calculation",
+                    asset["symbol"]
+                )
+                change = 0
+            else:
+                price_delta = current_price - asset["price"][-1 - data_points]
+                change = price_delta / current_price
+
+
             self.logger.debug(
                 "Calculated asset: %s for interval: %s with change: %s",
                 asset["symbol"],

@@ -2,10 +2,22 @@
 
 # Using Spot API with url set to https://api.binance.com/api/v3/ticker/price
 # Using Futures API with url set to: https://fapi.binance.com/fapi/v1/ticker/price
-apiUrl: https://api.binance.com/api/v3/ticker/price
+# apiUrl: https://api.binance.com/api/v3/ticker/price
+# danh cho Futures: apiUrl: https://fapi.binance.com/fapi/v1/ticker/price
+
+apiUrl: https://fapi.binance.com/fapi/v1/ticker/price
+
+# apiUrl: https://contract.mexc.com/api/v1/contract/index_price/BTC_USDT"
+
+# apiUrl: https://contract.mexc.com/api/v1/contract/ticker
+
+# apiUrl: https://api.mexc.com/api/v3//ticker/price
+
+#Bitget
+# apiUrl: https://api.bitget.com/api/v2/spot/market/tickers
 
 # Intervals which are monitored. Add or remove intervals as you like.
-chartIntervals:
+chartIntervals: 
   - 1m
   - 5m
   - 15m
@@ -55,161 +67,8 @@ extractInterval: 1s
 
 # Blacklist only mode, if enabled, pairs in blacklist will be IGNORED it DOES NOT IMPACT pairsOfInterest
 blacklist:
-  - NBTUSDT
-  - BTTCUSDT
-  - PERLUSDT
-  - WTCUSDT
-  - BTSUSDT
-  - TORNUSDT
-  - BCCUSDT
-  - VENUSDT
-  - NULSUSDT
-  - PAXUSDT
-  - NANOUSDT
-  - BTTUSDT
-  - MITHUSDT
-  - TFUELUSDT
-  - ERDUSDT
-  - WINUSDT
-  - GTOUSDT
-  - COSUSDT
-  - TOMOUSDT
-  - DOCKUSDT
-  - WANUSDT
-  - FUNUSDT
-  - BEAMUSDT
-  - CTXCUSDT
-  - TROYUSDT
-  - VITEUSDT
-  - WRXUSDT
-  - LTOUSDT
-  - MBLUSDT
-  - DATAUSDT
-  - HIVEUSDT
-  - ARDRUSDT
-  - VTHOUSDT
-  - DCRUSDT
-  - IRISUSDT
-  - KMDUSDT
-  - JSTUSDT
-  - PAXGUSDT
-  - WNXMUSDT
-  - DIAUSDT
-  - FIOUSDT
-  - WINGUSDT
-  - SUNUSDT
-  - UTKUSDT
-  - AUDIOUSDT
-  - HARDUSDT
-  - AVAUSDT
-  - JUVUSDT
-  - PSGUSDT
-  - OGUSDT
-  - ATMUSDT
-  - ASRUSDT
-  - FIROUSDT
-  - DODOUSDT
-  - ACMUSDT
-  - FISUSDT
-  - PONDUSDT
-  - DEGOUSDT
-  - RAMPUSDT
-  - EPSUSDT
-  - AUTOUSDT
-  - TKOUSDT
-  - PUNDIXUSDT
-  - BTGUSDT
-  - MIRUSDT
-  - BARUSDT
-  - FORTHUSDT
-  - BURGERUSDT
-  - POLSUSDT
-  - MDXUSDT
-  - NUUSDT
-  - TORNUSDT
-  - KEEPUSDT
-  - ERNUSDT
-  - PHAUSDT
-  - MLNUSDT
-  - DEXEUSDT
-  - CLVUSDT
-  - TVKUSDT
-  - FARMUSDT
-  - ALPACAUSDT
-  - QUICKUSDT
-  - MBOXUSDT
-  - FORUSDT
-  - REQUSDT
-  - GHSTUSDT
-  - TRIBEUSDT
-  - GNOUSDT
-  - ELFUSDT
-  - POLYUSDT
-  - VIDTUSDT
-  - SYSUSDT
-  - DFUSDT
-  - FIDAUSDT
-  - CVPUSDT
-  - BETAUSDT
-  - RAREUSDT
-  - LAZIOUSDT
-  - CHESSUSDT
-  - ADXUSDT
-  - RGTUSDT
-  - CITYUSDT
-  - KP3RUSDT
-  - QIUSDT
-  - PORTOUSDT
-  - VGXUSDT
-  - AMPUSDT
-  - PLAUSDT
-  - PYRUSDT
-  - ALCXUSDT
-  - SANTOSUSDT
-  - MCUSDT
-  - ANYUSDT
-  - FLUXUSDT
-  - VOXELUSDT
-  - OOKIUSDT
-  - LOKAUSDT
-  - SCRTUSDT
-  - ACAUSDT
-  - ANCUSDT
-  - XNOUSDT
-  - ALPINEUSDT
-  - NBTUSDT
-  - KDAUSDT
-  - BSWUSDT
-  - BIFIUSDT
-  - MULTIUSDT
-  - MOBUSDT
-  - NEXOUSDT
-  - REIUSDT
-  - EPXUSDT
-  - NEBLUSDT
-  - OSMOUSDT
-  - RPLUSDT
-  - PROSUSDT
-  - GNSUSDT
-  - SYNUSDT
-  - VIBUSDT
-  - BETHUSDT
-  - PROMUSDT
-  - QKCUSDT
-  - UFTUSDT
-  - OAXUSDT
-  - WBTCUSDT
-  - AERGOUSDT
-  - ASTUSDT
-  - WBETHUSDT
-  - CREAMUSDT
-  - GFTUSDT
-  - IQUSDT
-  - PIVXUSDT
-  - VICUSDT
-  - AEURUSDT
-  - PDAUSDT
-#  - ETHUSDT
+  
+ - ETHUSDT
 
 # List the trading currency you are interested in. Other options include 'BUSD', 'BTC' , 'ETH'
 pairsOfInterest:
